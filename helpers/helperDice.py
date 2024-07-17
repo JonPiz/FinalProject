@@ -1,6 +1,7 @@
 import time
 import random
 import sys
+import helpers.superHelperTotal as SHT
 from helpers.ansi import ansi
 
 def RollPlayerDice(playerName, totalPlayers):
@@ -12,7 +13,7 @@ def RollPlayerDice(playerName, totalPlayers):
         print(f"[{playerName}] Roll {i}: " + color + f"{roll} " + ansi.END , end="")
         sys.stdout.flush()
         time.sleep(0.50)
-    print(f"\n[{playerName}] Sum: " + ansi.BOLD + ansi.UNDERLINE + f"{sum}" + ansi.END)
+    print(f"\n[{playerName}] Sum: " + SHT.StyleTotal(sum, totalPlayers))
     return sum
 
 def GradeRoll(roll):
