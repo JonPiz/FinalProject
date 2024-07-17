@@ -22,5 +22,15 @@ def GradeRoll(roll):
         case _:
             return ''
         
-def GradeTotal(numOfPlayers):
-    
+def GradeTotal(total, numOfPlayers):
+    low = numOfPlayers * 2
+    med = (numOfPlayers * 6) - low
+    match total:
+        case value if 1 <= value <= low:
+            return ansi.RED
+        case value if low <= value <= med:
+            return ansi.YELLOW
+        case value if value >= med:
+            return ansi.GREEN
+        case _:
+            return ''

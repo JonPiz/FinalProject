@@ -1,4 +1,3 @@
-import random
 import time
 import helperDice as HD
 from ansi import ansi
@@ -9,7 +8,7 @@ def main():
         while True:
             name = input("\nWhat should this player be called?: ").capitalize()
             if name in players:
-                print("This name already exists!!! All names must be unique. Try again.")
+                print("\nThis name already exists!!! All names must be unique. Try again.\n")
             else:
                 return name
 
@@ -31,8 +30,8 @@ def main():
     for i in range(1, numPlayersFixed + 1):
         time.sleep(.5)
         name = ChoosePlayerName()
-        roll = HD.RollPlayerDice(name, numPlayersFixed)
-        players[name] = roll
+        sum = HD.RollPlayerDice(name, numPlayersFixed)
+        players[name] = sum
 
     time.sleep(.75)
     
@@ -42,7 +41,7 @@ def main():
     # Print results
     print("\nTurn order (based on dice rolls):")
     for rank, (player, playerRoll) in enumerate(sortedPlayers, start=1):
-        print(f"{rank}. [{player}] Total Roll: {playerRoll}")
+        print(f"{rank}. [{player}] Total Roll: " + ansi.BOLD + ansi.UNDERLINE + HD.GradeTotal(playerRoll, numPlayersFixed) + f"{playerRoll}" + ansi.END)
         
     print("")
 
