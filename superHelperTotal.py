@@ -9,3 +9,11 @@ def StyleTotal(total, totalPlayers):
         f"{total}"
         f"{ansi.END}"
     )
+
+def StyleFirstPlayer(sPlayers):
+    return (
+        f"{ansi.BOLD}"
+        f"{ansi.UNDERLINE}"
+        f"{sPlayers[0][0]}"
+        f"{ansi.END}"
+    )

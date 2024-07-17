@@ -1,6 +1,6 @@
 def ChoosePlayerName(currentPlayers):
     while True:
-        name = input("\nWhat should this player be called?: ").capitalize()
+        name = input(f"\nWhat should Player {len(currentPlayers) + 1} be called?: ").capitalize()
         if name in currentPlayers:
             print("\nThis name already exists!!! All names must be unique. Try again.")
         else:

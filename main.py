@@ -4,6 +4,10 @@ import helperPlayer as HP
 import helperDice as HD
 
 def main():
+    print("\nWelcome to Jonathan's dice roll turn decider!")
+    time.sleep(2)
+    print("We will simulate dice rolls and compare them to ascertain who shall go first!\n")
+    time.sleep(2)
 
     numPlayers = HP.ChoosePlayerCount()
 
@@ -24,7 +28,10 @@ def main():
     print("\nTurn order (based on dice rolls):")
     for rank, (player, playerRoll) in enumerate(sortedPlayers, start=1):
         print(f"{rank}. [{player}] Total Roll: " + SHT.StyleTotal(playerRoll, numPlayers))
-        
-    print("")
+
+    time.sleep(1)
+    print(f"\nIt looks like " + SHT.StyleFirstPlayer(sortedPlayers) + " will start this game!!")
+    time.sleep(1.5)
+    print("Thank you for using my app! -Jonathan Pizzano\n")
 
 main()
