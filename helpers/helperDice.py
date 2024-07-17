@@ -1,7 +1,7 @@
 import time
 import random
 import sys
-from ansi import ansi
+from helpers.ansi import ansi
 
 def RollPlayerDice(playerName, totalPlayers):
     sum = 0

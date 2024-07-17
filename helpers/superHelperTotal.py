@@ -1,5 +1,5 @@
-import helperDice as HD
-from ansi import ansi
+import helpers.helperDice as HD
+from helpers.ansi import ansi
 
 def StyleTotal(total, totalPlayers):
     return (
