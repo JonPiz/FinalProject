@@ -1,4 +1,6 @@
+import time
 import random
+import sys
 from ansi import ansi
 
 def RollPlayerDice(playerName, totalPlayers):
@@ -8,6 +10,8 @@ def RollPlayerDice(playerName, totalPlayers):
         sum += roll
         color = GradeRoll(roll=roll)
         print(f"[{playerName}] Roll {i}: " + color + f"{roll} " + ansi.END , end="")
+        sys.stdout.flush()
+        time.sleep(0.50)
     print(f"\n[{playerName}] Sum: " + ansi.BOLD + ansi.UNDERLINE + f"{sum}" + ansi.END)
     return sum
 
